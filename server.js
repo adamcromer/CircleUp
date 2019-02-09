@@ -26,3 +26,8 @@ var connection = mysql.createConnection({
     password: pass,
     database: ""
 });
+
+// start the server
+app.listen(PORT, function() {
+    console.log("Listening on http://localhost:" + PORT);
+});
