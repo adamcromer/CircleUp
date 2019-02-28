@@ -12,8 +12,6 @@ module.exports = function(app) {
     console.log(req.body);
     db.User.create({
       email: req.body.email,
-
-=======
       password: req.body.password,
       name: req.body.name
     }).then(function() {
