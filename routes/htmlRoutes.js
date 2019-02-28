@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 var db = require("../models");
 var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -18,7 +19,7 @@ module.exports = function(app) {
     }
     res.render("login");
   });
-  
+
   // Load USER page
   app.get("/user", isAuthenticated, function(req, res) {
     res.render("user");
