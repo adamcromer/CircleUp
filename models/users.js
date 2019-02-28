@@ -37,7 +37,6 @@ module.exports = function(sequelize, DataTypes) {
     );
   });
 
-<<<<<<< HEAD
   User.associate = function(models) {
     User.belongsToMany(models.Group, {
       through: "GroupUser",
@@ -45,19 +44,5 @@ module.exports = function(sequelize, DataTypes) {
       foreignKey: "userId"
     });
   };
-=======
-//   User.associate = (models) => {
-//     User.belongsToMany(models.Group, {
-//       through: 'GroupUser',
-//       as: 'group',
-//       foreignKey: 'userId'
-//     });
-//     User.hasMany(models.Post, {
-//       onDelete: "cascade"
-//     });
-//   };
->>>>>>> origin
   return User;
 };
-
-
