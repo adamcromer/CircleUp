@@ -37,8 +37,9 @@ $(document).ready(function() {
       console.log("after signup api call", data.errors[0].message);
       if (data.errors[0].message === "email must be unique"){
         $("#error").text("Email is already taken!");
-      }
-      // window.location.replace(data);
+        return;
+      } 
+      window.location.replace(data);
       // If there's an error, handle it by throwing up a bootstrap alert
     }).catch(handleLoginErr);
   }
