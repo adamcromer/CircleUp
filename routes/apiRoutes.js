@@ -14,15 +14,16 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
       name: req.body.name
-    }).then(function() {
-      res.redirect(307, "/api/login");
-    }).catch(function(err) {
-      console.log("hello" + err);
+    })
+      .then(function() {
+        res.redirect(307, "/api/login");
+      })
+      .catch(function(err) {
+        console.log("hello" + err);
 
-      res.json(err);
-      // res.status(422).json(err.errors[0].message);
-    });
-
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
   });
 
   // Route for logging user out
