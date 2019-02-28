@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "DGMMAB!mys",
+    "password": null,
     "database": "new_events_db",
     "host": "localhost",
     "dialect": "mysql"
