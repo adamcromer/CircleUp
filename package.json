@@ -1,7 +1,7 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "kickacoders",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "Project 2 by Kick A Coders",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
