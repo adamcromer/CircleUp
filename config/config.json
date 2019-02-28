@@ -1,8 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "SamanthaandAlice",
-    "database": "new_eventdb",
+
+=======
+    "password": "Snowbird1",
+    "database": "new_eventsdb",
+
     "host": "localhost",
     "dialect": "mysql"
   },
