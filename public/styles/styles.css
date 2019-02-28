@@ -1,3 +1,268 @@
-.list-group-item {
-  line-height: 2.5;
+/*
+==============================
+BASIC SETUP
+==============================
+*/
+
+body {
+  background: #ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 0.9em;
+  font-weight: 700;
+  color: #444;
+}
+
+b, strong {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.brand-text {
+  color: #009BA0 !important;
+}
+
+section {
+  margin-top: 3em;
+}
+
+::selection {
+  color: #fff;
+  background: #009BA0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ccc; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #009BA0;
+  background-image: linear-gradient(to bottom right, #00bcd4, #00796b);
+  border-radius: 8px;
+}
+
+/*
+==============================
+COLUMN SETUP
+==============================
+*/
+
+.round-left,
+.round-right {
+  background: #fff;
+  width: 100%;
+  min-width: 295px;
+}
+
+.round-left {
+  border-radius: 20px 0 0 20px;
+}
+
+.round-right {
+  border-radius: 0 20px 20px 0;
+}
+
+.padded-box {
+  padding: 1em;
+}
+
+/*
+==============================
+SIDEBAR
+==============================
+*/
+
+.sidebar {
+  background-color: #efefef;
+  text-align: center;
+}
+
+.round-right h3,
+.round-right h4 {
+  color: #009BA0;
+}
+
+/*
+==============================
+NAVBAR
+==============================
+*/
+
+nav {
+  background: #009BA0;
+  color: #fff;
+}
+
+nav .brand-logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/*
+==============================
+BUTTONS
+==============================
+*/
+
+.btn-bordered {
+  border-radius: 54px;
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+  padding: 0 3em;
+}
+
+.btn-filled {
+  border-radius: 54px;
+  border: 2px solid #009BA0;
+  color: #fff;
+  background: #009BA0;
+  padding: 0 3em;
+}
+
+.btn-small {
+  padding: 0 1em;
+  float: right;
+}
+
+.waves-light:hover {
+  background-color: #fff;
+  color: #009BA0;
+}
+
+/*
+==============================
+IMAGES
+==============================
+*/
+
+.img-placeholder {
+  width: 200px; 
+  height: 200px; 
+  background: #009BA0; 
+  margin: 2em auto; 
+  border-radius: 50%;
+}
+
+/*
+==============================
+TABLES
+==============================
+*/
+
+table tbody tr td {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+table.highlight > tbody > tr:hover {
+  background-color: rgba(0, 155, 160, 0.2);
+}
+
+/*
+==============================
+SIGN-IN/UP PAGE
+==============================
+*/
+
+.logo {
+  position: absolute;
+  margin: 2em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.signup .sign-flex,
+.signin .sign-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.signup .sign-sidebar,
+.signin .sign-sidebar {
+  background-color: #009BA0;
+  background-image: linear-gradient(to bottom right, #00bcd4, #00796b);
+  color: #fff;
+}
+
+.sign-sidebar h3 {
+  color: #fff;
+}
+
+.signup form,
+.signin form {
+  padding: 0 4em;
+}
+
+/*
+==============================
+USER PAGE
+==============================
+*/
+
+.user-page table tbody tr:last-child {
+  border-bottom: 2px solid #f8f8f8;
+}
+
+/*
+==============================
+EVENT PAGE
+==============================
+*/
+
+.event-info {
+  padding: 1em 0;
+  color: #444;
+}
+
+.event-info span {
+  display: block;
+  line-height: 0.9em;
+  font-family: 'Poppins', sans-serif;
+}
+
+.event-day {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.event-month {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3em;
+}
+
+.event-date {
+  font-weight: 900;
+  font-size: 10em;
+  color: #009BA0;
+  letter-spacing: -0.05em;
+}
+
+.event-time {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.event-street {
+  padding-top: 0.5em;
+}
+
+.event-street,
+.event-cityst {
+  font-size: 2em;
+  text-transform: uppercase;
 }
