@@ -1,5 +1,5 @@
-module.exports = (sequelize, DataTypes) => {
-  var Group = sequelize.define('Group', {
+module.exports = function(sequelize, DataTypes) {
+  var Group = sequelize.define("Group", {
     name: {
       allowNull: false,
       type: DataTypes.STRING,
@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  Group.associate = (models) => {
-    Group.belongsToMany(models.User, {
-      through: 'GroupUser',
-      as: 'user',
-      foreignKey: 'groupId'
-    });
-  };
+  //   Group.associate = function(models) {
+  //     Group.belongsToMany(models.User, {
+  //       through: "GroupUser",
+  //       as: "user",
+  //       foreignKey: "groupId"
+  //     });
+  //   };
   return Group;
 };
