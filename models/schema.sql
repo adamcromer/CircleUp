@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS new_eventsdb;
-CREATE DATABASE new_eventsdb;
+DROP DATABASE IF EXISTS new_events_db;
+CREATE DATABASE new_events_db;

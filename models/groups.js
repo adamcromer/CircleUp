@@ -9,12 +9,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  Group.associate = function(models) {
-    Group.belongsToMany(models.User, {
-      through: "GroupUser",
-      as: "user",
-      foreignKey: "groupId"
-    });
-  };
+//   Group.associate = function(models) {
+//     Group.belongsToMany(models.User, {
+//       through: "GroupUser",
+//       as: "user",
+//       foreignKey: "groupId"
+//     });
+//   };
   return Group;
 };
