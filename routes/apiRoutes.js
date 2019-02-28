@@ -1,18 +1,19 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
-
 module.exports = function(app) {
   ///
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("user");
   });
-  
+
   // Route for signing up a user
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.User.create({
       email: req.body.email,
+
+=======
       password: req.body.password,
       name: req.body.name
     }).then(function() {
@@ -23,6 +24,7 @@ module.exports = function(app) {
       res.json(err);
       // res.status(422).json(err.errors[0].message);
     });
+
   });
 
   // Route for logging user out
@@ -36,8 +38,7 @@ module.exports = function(app) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
-    }
-    else {
+    } else {
       // Otherwise send back the user's email and id
       res.json({
         name: req.user.name,
@@ -45,7 +46,7 @@ module.exports = function(app) {
       });
     }
   });
-  
+
   // Get all events
   app.get("/api/events", function(req, res) {
     db.Event.findAll({}).then(function(dbEvent) {
