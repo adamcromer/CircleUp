@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("hello")
+  
   // Getting references to our form and input
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
@@ -34,12 +34,17 @@ $(document).ready(function() {
       password: password,
       name: name
     }).then(function(data) {
-      window.location.replace(data);
+      console.log("after signup api call", data.errors[0].message);
+      if (data.errors[0].message === "email must be unique"){
+        $("#error").text("Email is already taken!");
+      }
+      // window.location.replace(data);
       // If there's an error, handle it by throwing up a bootstrap alert
     }).catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
+    console.log("helloFrontend")
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
