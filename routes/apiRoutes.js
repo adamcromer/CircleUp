@@ -2,7 +2,7 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function(app) {
-  ///
+  /// Login
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("user");
   });
@@ -18,11 +18,9 @@ module.exports = function(app) {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
       console.log("hello" + err);
-
       res.json(err);
       // res.status(422).json(err.errors[0].message);
     });
-
   });
 
   // Route for logging user out
@@ -43,6 +41,13 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  /// Creating a Group
+  app.post("/api/groupcreate", function(req, res) {
+    db.Event.create(req.body).then(function(dbGroup) {
+      res.json(dbGroup);
+    });
   });
 
   // Get all events
