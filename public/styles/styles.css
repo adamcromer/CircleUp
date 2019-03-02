@@ -25,7 +25,7 @@ b, strong {
 }
 
 section {
-  margin-top: 3em;
+  margin: 2em 0;
 }
 
 ::selection {
@@ -53,6 +53,15 @@ COLUMN SETUP
 ==============================
 */
 
+.grid-box {
+  display: grid;
+  grid-template-columns: 295px 1fr;
+}
+
+.signin .grid-box {
+  grid-template-columns: 1fr 295px;
+}
+
 .round-left,
 .round-right {
   background: #fff;
@@ -69,7 +78,7 @@ COLUMN SETUP
 }
 
 .padded-box {
-  padding: 1em;
+  padding: 1.5em;
 }
 
 /*
@@ -81,6 +90,7 @@ SIDEBAR
 .sidebar {
   background-color: #efefef;
   text-align: center;
+  padding-bottom: 2em;
 }
 
 .round-right h3,
@@ -137,6 +147,10 @@ BUTTONS
   color: #009BA0;
 }
 
+.btn-flat {
+  margin-bottom: 0.5em !important;
+}
+
 /*
 ==============================
 IMAGES
@@ -146,7 +160,8 @@ IMAGES
 .img-placeholder {
   width: 200px; 
   height: 200px; 
-  background: #009BA0; 
+  background-color: #009BA0;
+  background-image: linear-gradient(to bottom right, #00bcd4, #00796b);
   margin: 2em auto; 
   border-radius: 50%;
 }
@@ -188,6 +203,8 @@ SIGN-IN/UP PAGE
   justify-content: center;
   align-content: center;
   text-align: center;
+  padding: 2em 0;
+  height: calc(100vh - 4em);
 }
 
 .signup .sign-sidebar,
@@ -201,9 +218,89 @@ SIGN-IN/UP PAGE
   color: #fff;
 }
 
-.signup form,
-.signin form {
+/* 
+==============================
+FORMS 
+==============================
+*/
+
+form {
   padding: 0 4em;
+}
+
+/*
+==============================
+MODALS
+==============================
+*/
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 999; 
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh; 
+  min-height: 100vh;
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding: 0;
+}
+
+.modal .modal-content {
+  padding: 0;
+}
+
+.modal-title {
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.modal-header {
+  padding: 1em 2em;
+  background-color: #009BA0;
+  color: #fff;
+  border-radius: 20px 20px 0 0;
+}
+
+.modal-body {
+  padding: 1em 2em;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 9em auto;
+  padding: 0;
+  width: 768px;
+  max-width: 92%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 20px;
+}
+
+.close {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #efefef;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
 }
 
 /*
