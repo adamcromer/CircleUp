@@ -19,8 +19,7 @@ module.exports = function(app) {
         res.redirect(307, "/api/login");
       })
       .catch(function(err) {
-        console.log("hello" + err);
-
+        console.log(err);
         res.json(err);
         // res.status(422).json(err.errors[0].message);
       });
@@ -46,6 +45,23 @@ module.exports = function(app) {
     }
   });
 
+  /// Group Routes
+  // Create a new group
+  app.post("/api/groups", function(req, res) {
+    db.Group.create(req.body).then(function(dbGroup) {
+      res.json(dbGroup);
+    });
+  });
+
+  /// Get all groups associated with user
+  // Get all events
+  app.get("/api/groups", function(req, res) {
+    db.Group.findAll({}).then(function(dbGroup) {
+      res.json(dbGroup);
+    });
+  });
+
+  // Event Routes
   // Get all events
   app.get("/api/events", function(req, res) {
     db.Event.findAll({}).then(function(dbEvent) {
