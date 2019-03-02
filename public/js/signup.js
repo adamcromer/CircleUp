@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+  console.log("hello")
   // Getting references to our form and input
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
@@ -8,7 +8,7 @@ $(document).ready(function() {
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
-    
+    console.log("buttonclick")
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
@@ -34,11 +34,6 @@ $(document).ready(function() {
       password: password,
       name: name
     }).then(function(data) {
-      console.log("after signup api call", data.errors[0].message);
-      if (data.errors[0].message === "email must be unique"){
-        $("#error").text("Email is already taken!");
-        return;
-      } 
       window.location.replace(data);
       // If there's an error, handle it by throwing up a bootstrap alert
     }).catch(handleLoginErr);
