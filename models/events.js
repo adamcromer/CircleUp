@@ -19,11 +19,16 @@ module.exports = function(sequelize, DataTypes) {
     itemsToBring: {
       type: DataTypes.TEXT,
       allowNull: false
-    },
-    author: {
-      type: DataTypes.STRING,
-      allowNull: false
     }
   });
+  Event.associate = function(models) {
+    Event.hasOne(models.Group, {
+      foreignKey: "groupId"
+    });
+    Event.hasMany(models.User, {
+      foreignKey: "userId"
+    });
+  };
+
   return Event;
 };
