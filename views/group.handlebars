@@ -12,49 +12,115 @@
     </nav>
 </header>
 
-<section>
-    <div class="row">
-        <div class="container">
-            <div class="col s5 test">
-                <div style="width: 100%; background: #666; padding: 50px 10px;">GROUP IMAGE</div>
-                <h2>GROUP NAME</h2>
-                <a href="#" class="waves-effect waves-light btn-large">Invite a Member</a>
-                <a href="#" class="waves-effect waves-light btn-large">Leave Group</a>
-                <h3>Group Members</h3>
-                <ul>
-                    <li>Alpha</li>
-                    <li>Beta</li>
-                    <li>Gamma</li>
-                    <li>Delta</li>
-                    <li>Epsilon</li>
-                    <li>Zeta</li>
-                </ul>
+<section class="group-page">
+    <div class="container">
+        <div class="grid-box">
+            <div class="round-left sidebar">
+                <div class="padded-box">
+                    <div class="img-placeholder"></div>
+                    <h3>Group Name</h3>
+                    <a href="#" class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">Invite a Member</a>
+                    <a href="#" class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">Leave Group</a>
+                    <h3>Group Members</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Member Alpha</td>
+                            </tr>
+                            <tr>
+                                <td>Member Beta</td>
+                            </tr>
+                            <tr>
+                                <td>Member Gamma</td>
+                            </tr>
+                            <tr>
+                                <td>Member Delta</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="col s7 test">
-                <h3>Group Events:</h3>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Event Alpha
-                                <a href="/event" class="waves-effect waves-light btn-small">View Event Page &raquo;</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Event Beta
-                                <a href="/event" class="waves-effect waves-light btn-small">View Event Page &raquo;</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Event Gamma
-                                <a href="/event" class="waves-effect waves-light btn-small">View Event Page &raquo;</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="round-right">
+                <div class="padded-box">
+                    <h3>Group Events</h3>
+                    <table class="striped highlight">
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 700">Event Alpha</td>
+                                <td>2/25/2019 6:30pm</td>
+                                <td><a href="/event" class="waves-effect waves-light btn-small btn-flat btn-filled">View
+                                        Event</a></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 700">Event Beta</td>
+                                <td>2/25/2019 6:30pm</td>
+                                <td><a href="/event" class="waves-effect waves-light btn-small btn-flat btn-filled">View
+                                        Event</a></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 700">Event Gamma</td>
+                                <td>2/25/2019 6:30pm</td>
+                                <td><a href="/event" class="waves-effect waves-light btn-small btn-flat btn-filled">View
+                                        Event</a></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 700">Event Delta</td>
+                                <td>2/25/2019 6:30pm</td>
+                                <td><a href="/event" class="waves-effect waves-light btn-small btn-flat btn-filled">View
+                                        Event</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="text-align: center;" class="row">
+                        <div class="col s12">
+                            <p>Make your own event!</p>
+                            <p>
+                                <a id="btn-create"
+                                    class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create
+                                    Event</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- MODALS -->
+<div id="modal-create" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h5 class="modal-title">Create an Event</h5>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="input-field">
+                    <input id="new-event-name-input" type="text" class="validate">
+                    <label for="new-event-name">Event Name</label>
+                </div>
+                <div class="input-field">
+                    <input id="new-event-date-input" type="text" class="datepicker">
+                    <label for="new-event-date">Event Date</label>
+                </div>
+                <div class="input-field">
+                    <input id="new-event-time-input" type="text" class="timepicker">
+                    <label for="new-event-time">Event Time</label>
+                </div>
+                <div class="input-field">
+                    <input id="new-event-address-input" type="text" class="validate">
+                    <label for="new-event-address">Event Address</label>
+                </div>
+                <p style="text-align: center;">
+                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{!-- <script src="/js/group.js"></script> --}}
+<script src="/js/modal.js"></script>
