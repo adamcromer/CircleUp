@@ -13,37 +13,89 @@
     </nav>
 </header>
 
-<section>
-    <div class="row">
-        <div class="container">
-            <div class="col s5 test">
-                <div style="width: 100%; background: #666; padding: 50px 10px;">EVENT IMAGE</div>
-                <h2>EVENT NAME</h2>
-                <a href="#" class="waves-effect waves-light btn-large">Invite a Member</a>
-                <a href="#" class="waves-effect waves-light btn-large">Leave Group</a>
-                <h3>Event Attendees</h3>
-                <ul>
-                    <li>Alpha</li>
-                    <li>Beta</li>
-                    <li>Gamma</li>
-                    <li>Delta</li>
-                    <li>Epsilon</li>
-                    <li>Zeta</li>
-                </ul>
-            </div>
-            <div class="col s7 test">
-                <div class="event-info">
-                    <h3>EVENT INFO</h3>
-                <h4>Date, Time</h4>
-                <h4>Location</h4>
-                </div>
-                <div class="event-map" style="border: 2px solid seagreen">
-                    MAP
-                </div>
-                <div class="event-comments">
-                    MESSAGE BOARD
+<section class="event-page">
+    <div class="container">
+        <div class="grid-box">
+            <div class="round-left sidebar">
+                <div class="padded-box">
+                    <div class="event-info">
+                        <span class="event-day">MONDAY</span>
+                        <span class="event-month">SEPTEMBER</span>
+                        <span class="event-date">25</span>
+                        <span class="event-time">6:30am</span>
+                        <span class="event-street">100 S 200 W</span>
+                        <span class="event-cityst">Sandy, UT</span>
+                    </div>
+
+                    <div style="height: 150px; background: #ccc; padding: 1em; margin-bottom: 1em;">Map Goes Here X
+                    </div>
+
+                    <a class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">Add to Calendar</a>
+                    <a class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">RSVP</a>
+
+
                 </div>
             </div>
-        </div>
-    </div>
+
+            <div class="round-right">
+                <div class="padded-box">
+                    <h3 class="title-color">Event Title</h3>
+
+                    <p>Event Info. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis quia aspernatur
+                        corporis
+                        ipsa quisquam quod magni ipsum culpa, consequatur vel blanditiis dolorum assumenda voluptas!
+                        Temporibus
+                        consequatur aspernatur necessitatibus perferendis repellat.</p>
+
+
+                    <div class="row">
+                        <div class="col s5">
+                            <h4 class="title-color">Attendees</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Member Alpha</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Member Beta</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Member Gamma</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Member Delta</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col s7">
+                            <h4 class="title-color">Items Needed</h4>
+                            <p>Please select an item to bring from the list below:</p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>Hamburgers</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>Buns</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>Chips</span>
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 </section>
+
+{{!-- <script src="/js/event.js"></script> --}}
+<script src="/js/modal.js"></script>

@@ -11,42 +11,122 @@
     </nav>
 </header>
 
-<section>
-    <div class="row">
-        <div class="container">
-            <div class="col s5 test">
-                <div style="width: 100%; background: #666; padding: 50px 10px;">PROFILE IMAGE</div>
-                <h2 class="user-name"></h2>
-                <a href="#" class="waves-effect waves-light btn-large">Create A Group</a>
-                <a href="#" class="waves-effect waves-light btn-large">Join A Group</a>
+<section class="user-page">
+    <div class="container">
+        <div class="grid-box">
+            <div class="round-left sidebar">
+                <div class="padded-box">
+                    <div class="img-placeholder"></div>
+                    <h3 class="user-name"></h3>
+                    <p class="user-email"></p>
+                    {{!-- <div>
+                        <a class="waves-effect waves-light btn-large btn-flat btn-sign btn-filled">Change Password</a>
+                    </div> --}}
+                </div>
             </div>
-            <div class="col s7 test">
-                <h3>Groups You're Already In:</h3>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Group Alpha
-                                <a href="/group" class="waves-effect waves-light btn-small">View Group Page &raquo;</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Group Beta
-                                <a href="/group" class="waves-effect waves-light btn-small">View Group Page &raquo;</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Group Gamma
-                                <a href="/group" class="waves-effect waves-light btn-small">View Group Page &raquo;</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="round-right">
+                <div class="padded-box">
+                    <h3 class="title-color">Your Groups</h3>
+
+                    <table class="striped highlight">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Group Alpha
+                                    <a href="/group" class="waves-effect waves-light btn-small btn-flat btn-filled">View
+                                        Group Page &raquo;</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Group Beta
+                                    <a href="/group" class="waves-effect waves-light btn-small btn-flat btn-filled">View
+                                        Group Page &raquo;</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Group Gamma
+                                    <a href="/group" class="waves-effect waves-light btn-small btn-flat btn-filled">View
+                                        Group Page &raquo;</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="text-align: center;" class="row">
+                        <div class="col s6">
+                            <p>See what your group is up to.</p>
+                            <p>
+                                <a id="btn-join"
+                                    class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Join
+                                    Group</a>
+                            </p>
+                        </div>
+                        <div class="col s6">
+                            <p>Make your own group!</p>
+                            <p>
+                                <a id="btn-create"
+                                    class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create
+                                    Group</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 </section>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- MODALS -->
+<div id="modal-join" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h5 class="modal-title">Join a Group</h5>
+        </div>
+        <div class="modal-body">
+            <form class="signup">
+                <div class="input-field">
+                    <input id="join-group-name-input" type="text" class="validate">
+                    <label for="join-group-name">Group Name</label>
+                </div>
+                <div class="input-field">
+                    <input id="join-group-password-input" type="password" class="validate">
+                    <label for="join-group-password">Group Password</label>
+                </div>
+                <p style="text-align: center;">
+                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Join</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="modal-create" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h5 class="modal-title">Create a Group</h5>
+        </div>
+        <div class="modal-body">
+            <form class="signup">
+                <div class="input-field">
+                    <input id="new-group-input" type="text" class="validate">
+                    <label for="new-group">Group Name</label>
+                </div>
+                <div class="input-field">
+                    <input id="new-group-password-input" type="password" class="validate">
+                    <label for="new-group-password">Group Password</label>
+                </div>
+                <p style="text-align: center;">
+                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script src="/js/user.js"></script>
+<script src="/js/modal.js"></script>
