@@ -17,18 +17,13 @@ describe("GET /api/user_data", function() {
     return db.sequelize.sync({ force: true });
   });
 
-  it("should pass API User test", function(done) {
+  it("should pass API user test", function(done) {
     // Add some examples to the db to test with
     db.User.bulkCreate([
       {
         email: "testEmail1@test.com",
         password: "testPassword1",
         name: "TestName1"
-      },
-      {
-        email: "testEmail2@test.com",
-        password: "testPassword2",
-        name: "TestName2"
       }
     ]).then(function() {
       // Request the route that returns all examples
@@ -40,21 +35,7 @@ describe("GET /api/user_data", function() {
 
         expect(err).to.be.null;
         expect(responseStatus).to.equal(200);
-        expect(responseBody).to.be.an("array");
-
-        expect(responseBody[0])
-          .to.be.an("object")
-          .that.includes({
-            name: "TestName1",
-            id: 1
-          });
-
-        expect(responseBody[1])
-          .to.be.an("object")
-          .that.includes({
-            name: "TestName2",
-            id: 2
-          });
+        expect(responseBody).to.be.an("object");
 
         // The `done` function is used to end any asynchronous tests
         done();
