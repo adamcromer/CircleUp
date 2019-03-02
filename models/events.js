@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     itemsToBring: {
-      type: DataTypes.ARRAY(sequelize.TEXT),
+      type: DataTypes.TEXT,
       allowNull: false
     },
     author: {
