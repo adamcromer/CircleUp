@@ -111,8 +111,28 @@
                     <label for="new-event-time">Event Time</label>
                 </div>
                 <div class="input-field">
-                    <input id="new-event-address-input" type="text" class="validate">
-                    <label for="new-event-address">Event Address</label>
+                    <input type="search" id="address" class="form-control" placeholder="Where are we going?" />
+                      <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+                      <script>
+                        (function () {
+                          var placesAutocomplete = places({
+                            appId: 'plMR3KWIP1YT',
+                            apiKey: '34f886eeef64ca86687224558cef96e4',
+                            container: document.querySelector('#address')
+                          });
+
+                          var $address = document.querySelector('#address-value')
+                          placesAutocomplete.on('change', function (e) {
+                            $address.textContent = e.suggestion.value
+                          });
+
+                          placesAutocomplete.on('clear', function () {
+                            $address.textContent = 'none';
+                          });
+
+                        })();
+                      
+                      </script>
                 </div>
                 <p style="text-align: center;">
                     <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create</a>
