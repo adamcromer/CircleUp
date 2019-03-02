@@ -19,7 +19,7 @@ describe("GET /api/user_data", function() {
 
   it("should pass API user test", function(done) {
     // Add some examples to the db to test with
-    db.User.bulkCreate([
+    db.User.create([
       {
         email: "testEmail1@test.com",
         password: "testPassword1",

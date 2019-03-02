@@ -1,15 +1,23 @@
 module.exports = function(sequelize, DataTypes) {
   var Event = sequelize.define("Event", {
-    title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    body: {
-      type: DataTypes.TEXT,
+    dateAndTime: {
+      type: DataTypes.DATE,
       allowNull: false
     },
     location: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    itemsToBring: {
+      type: DataTypes.ARRAY(sequelize.TEXT),
       allowNull: false
     },
     author: {
