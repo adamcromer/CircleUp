@@ -17,7 +17,7 @@ describe("GET /api/events", function() {
     return db.sequelize.sync({ force: true });
   });
 
-  it("should post test events and get them to see if they're found", function(done) {
+  it("should pass API event test", function(done) {
     // Add some examples to the db to test with
     db.Event.bulkCreate([
       {
