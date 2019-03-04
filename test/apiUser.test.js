@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 var request;
 
-describe("GET /api/user_data", function() {
+describe("/api/user_data test", function() {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function() {
@@ -19,7 +19,7 @@ describe("GET /api/user_data", function() {
 
   it("should pass API user test", function(done) {
     // Add some examples to the db to test with
-    db.User.create([
+    db.User.bulkCreate([
       {
         email: "testEmail1@test.com",
         password: "testPassword1",
@@ -32,7 +32,6 @@ describe("GET /api/user_data", function() {
         var responseBody = res.body;
 
         // Run assertions on the response
-
         expect(err).to.be.null;
         expect(responseStatus).to.equal(200);
         expect(responseBody).to.be.an("object");

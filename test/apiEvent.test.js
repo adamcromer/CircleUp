@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 var request;
 
-describe("GET /api/events", function() {
+describe("/api/events test", function() {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function() {
@@ -21,16 +21,18 @@ describe("GET /api/events", function() {
     // Add some examples to the db to test with
     db.Event.bulkCreate([
       {
-        title: "First Test",
-        body: "First Body",
+        name: "First Test",
+        dateAndTime: "2019-01-01T12:00:00.000Z",
         location: "First Location",
-        author: "KickACoderS"
+        description: "Super cool first event.",
+        itemsToBring: "this, that"
       },
       {
-        title: "Second Test",
-        body: "Second Body",
+        name: "Second Test",
+        dateAndTime: "2019-01-02T12:00:00.000Z",
         location: "Second Location",
-        author: "KickACoderS"
+        description: "Just as cool second event.",
+        itemsToBring: "that, this"
       }
     ]).then(function() {
       // Request the route that returns all examples
@@ -39,7 +41,6 @@ describe("GET /api/events", function() {
         var responseBody = res.body;
 
         // Run assertions on the response
-
         expect(err).to.be.null;
         expect(responseStatus).to.equal(200);
         expect(responseBody).to.be.an("array");
@@ -47,19 +48,21 @@ describe("GET /api/events", function() {
         expect(responseBody[0])
           .to.be.an("object")
           .that.includes({
-            title: "First Test",
-            body: "First Body",
+            name: "First Test",
+            dateAndTime: "2019-01-01T12:00:00.000Z",
             location: "First Location",
-            author: "KickACoderS"
+            description: "Super cool first event.",
+            itemsToBring: "this, that"
           });
 
         expect(responseBody[1])
           .to.be.an("object")
           .that.includes({
-            title: "Second Test",
-            body: "Second Body",
+            name: "Second Test",
+            dateAndTime: "2019-01-02T12:00:00.000Z",
             location: "Second Location",
-            author: "KickACoderS"
+            description: "Just as cool second event.",
+            itemsToBring: "that, this"
           });
 
         // The `done` function is used to end any asynchronous tests
