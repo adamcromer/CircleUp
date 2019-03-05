@@ -16,7 +16,7 @@
         <div class="grid-box">
             <div class="round-left sidebar">
                 <div class="padded-box">
-                    <div class="img-placeholder"></div>
+                    <img class="placeholder-icon" src="images/CircleUp_Logo.png">
                     <h3 class="user-name"></h3>
                     <p class="user-email"></p>
                     {{!-- <div>
@@ -29,14 +29,7 @@
                     <h3 class="title-color">Your Groups</h3>
                     <table class="striped highlight">
                         <tbody id="group-list" class="list-group">
-                            {{!-- <ul> --}}
-                                {{!-- {{#each groups}}
-                                <li data-id="{{this.id}}" class="list-group-item">
-                                    <a href="example/{{this.id}}">{{this.text}}</a>
-                                    <button class="btn btn-danger float-right delete">ｘ</button>
-                                </li>
-                                {{/each}} --}}
-                            {{!-- </ul> --}}
+                       
                         </tbody>
                     </table>
 
@@ -70,16 +63,14 @@
                         <div class="col s6">
                             <p>See what your group is up to.</p>
                             <p>
-                                <a id="btn-join"
-                                    class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Join
+                                <a id="btn-join" class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Join
                                     Group</a>
                             </p>
                         </div>
                         <div class="col s6">
                             <p>Make your own group!</p>
                             <p>
-                                <a id="btn-create"
-                                    class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create
+                                <a id="btn-create" class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create
                                     Group</a>
                             </p>
                         </div>
@@ -133,9 +124,9 @@
                     <label for="new-group-password">Group Password</label>
                 </div>
                 {{!-- <p style="text-align: center;">
-                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center" type="submit">Create</a> --}}
-                <button type="submit" id="btn-signup"
-                    class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create</button>
+                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center" type="submit">Create</a>
+                    --}}
+                    <button type="submit" id="btn-signup" class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create</button>
                 </p>
             </form>
         </div>

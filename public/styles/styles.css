@@ -184,6 +184,21 @@ IMAGES
   border-radius: 50%;
 }
 
+.placeholder-icon {
+  -webkit-animation: placeholder-ani 16s linear infinite;
+  animation: placeholder-ani 16s linear infinite;
+}
+
+@-webkit-keyframes placeholder-ani {
+  0%   {-webkit-transform: rotateZ(0deg);}
+  100%  {-webkit-transform: rotateZ(-360deg);}
+}
+
+@keyframes placeholder-ani {
+  0%   {transform: rotateZ(0deg);}
+  100%  {transform: rotateZ(-360deg);}
+}
+
 /*
 ==============================
 TABLES
@@ -283,8 +298,8 @@ SIGN-IN/UP PAGE
 }
 
 .error .error-icon {
-  -webkit-animation: icon-ani 4s infinite;
-  animation: icon-ani 4s infinite;
+  -webkit-animation: icon-ani 4s linear infinite;
+  animation: icon-ani 4s linear infinite;
 }
 
 @-webkit-keyframes icon-ani {
