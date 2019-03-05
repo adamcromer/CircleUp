@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Timmer11!",
+    "password": "SamanthaandAlice",
     "database": "new_events_db",
     "host": "localhost",
     "dialect": "mysql"
