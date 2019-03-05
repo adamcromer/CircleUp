@@ -2,7 +2,6 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function(app) {
-  ///
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("user");
   });
@@ -11,12 +10,14 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.User.create({
-      email: req.body.email,
-      password: req.body.password,
-      name: req.body.name
+      email: "yoyoyo@gmail.com",
+
+      name: "pablo"
     })
       .then(function() {
-        res.redirect(307, "/api/login");
+        console.log("hello");
+        res.json("hello");
+        // res.redirect(307, "/api/login");
       })
       .catch(function(err) {
         console.log(err);
@@ -49,8 +50,10 @@ module.exports = function(app) {
   /// Group Routes
   // Create a new group
   app.post("/api/groups", function(req, res) {
-    db.Group.create(req.body).then(function(dbGroup) {
-      res.json(dbGroup);
+    db.Role.create({ name: "ER", description: "cool" }).then(function(dbGroup) {
+      // res.json(dbGroup);
+      // bring user id from fron end in params
+      db.UserRole.create({ name: "Admin", roleId: dbGroup.id, userId: 1 });
     });
   });
 
@@ -61,7 +64,7 @@ module.exports = function(app) {
   });
 
   /// Get all groups associated with user
-  
+
   app.get("/api/groups", function(req, res) {
     db.Group.findAll({}).then(function(dbGroup) {
       res.json(dbGroup);
@@ -73,7 +76,7 @@ module.exports = function(app) {
       res.json(dbGroup);
     });
   });
-  
+
   // Event Routes
   // Get all events
   app.get("/api/events", function(req, res) {

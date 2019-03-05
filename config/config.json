@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "bootcamp",
     "database": "new_events_db",
     "host": "localhost",
     "dialect": "mysql"
