@@ -21,14 +21,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  Event.associate = function(models) {
-    Event.hasOne(models.Group, {
-      foreignKey: "groupId"
-    });
-    Event.hasMany(models.User, {
-      foreignKey: "userId"
-    });
-  };
+  // Event.associate = function(models) {
+  //   Event.hasOne(models.Group, {
+  //     foreignKey: "groupId"
+  //   });
+  //   Event.hasMany(models.User, {
+  //     foreignKey: "userId"
+  //   });
+  // };
 
   return Event;
 };

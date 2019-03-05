@@ -1,6 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
-
+// console.log(db)
 module.exports = function(app) {
   ///
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -50,6 +50,7 @@ module.exports = function(app) {
   // Create a new group
   app.post("/api/groups", function(req, res) {
     db.Group.create(req.body).then(function(dbGroup) {
+   console.log(db.Group, db.User)
       res.json(dbGroup);
     });
   });
