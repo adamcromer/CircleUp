@@ -2,7 +2,7 @@
     <nav>
         <div class="nav-wrapper">
             <div class="container">
-                <a href="#" class="brand-logo">Project 2 Title</a>
+                <a href="#" class="brand-logo">CircleUp</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/logout">Logout</a></li>
                 </ul>
@@ -27,14 +27,18 @@
             <div class="round-right">
                 <div class="padded-box">
                     <h3 class="title-color">Your Groups</h3>
-                    <ul id="group-list" class="list-group">
-                        {{!-- {{#each groups}}
-                        <li data-id="{{this.id}}" class="list-group-item">
-                            <a href="example/{{this.id}}">{{this.text}}</a>
-                            <button class="btn btn-danger float-right delete">ｘ</button>
-                        </li>
-                        {{/each}} --}}
-                    </ul>
+                    <table class="striped highlight">
+                        <tbody id="group-list" class="list-group">
+                            {{!-- <ul> --}}
+                                {{!-- {{#each groups}}
+                                <li data-id="{{this.id}}" class="list-group-item">
+                                    <a href="example/{{this.id}}">{{this.text}}</a>
+                                    <button class="btn btn-danger float-right delete">ｘ</button>
+                                </li>
+                                {{/each}} --}}
+                            {{!-- </ul> --}}
+                        </tbody>
+                    </table>
 
                     {{!-- <table class="striped highlight">
                         <tbody class="">
