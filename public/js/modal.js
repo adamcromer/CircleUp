@@ -54,6 +54,7 @@ function stringToArray(str) {
   return stringArr;
 }
 
+//Clears new event form
 function clearNewEvent() {
   $("#new-event-name-input").val("");
   $("#new-event-date-input").val("");
