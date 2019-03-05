@@ -33,8 +33,13 @@ $(document).ready(function() {
         window.location.replace(data);
         // If there's an error, log the error
       })
-      .catch(function(err) {
-        console.log(err);
-      });
+      .catch(handleLoginErr)
+        console.log(handleLoginErr);
+      };
+  function handleLoginErr() {
+    alert("Invalid: Please enter your information correctly.");
+    console.log("helloFrontend");
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
   }
 });

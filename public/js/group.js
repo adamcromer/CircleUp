@@ -1,13 +1,58 @@
 /* eslint-disable no-unused-vars */
-// create group elements
-var $groupName = $("#new-group-input");
-var $groupPassword = $("#new-group-password-input");
-var $submitBtn = $("#btn-signup");
-var $groupList = $("#group-list");
-// join group
-var $groupJoinName = $("#join-group-name-input");
-var $groupJoinPassword = $("#join-group-password-input");
-var $joinGroupBtn = $("#join-group");
+var name = $("#new-event-name-input")
+  .val()
+  .trim();
+var date = $("#new-event-date-input")
+  .val()
+  .trim();
+var time = $("#new-event-time-input")
+  .val()
+  .trim();
+var location = $("#address")
+  .val()
+  .trim();
+var description = $("#new-event-description-input")
+  .val()
+  .trim();
+var itemsToBring =
+  $("#item_needed1")
+    .val()
+    .trim() +
+  ", " +
+  $("#item_needed2")
+    .val()
+    .trim() +
+  ", " +
+  $("#item_needed3")
+    .val()
+    .trim() +
+  ", " +
+  $("#item_needed4")
+    .val()
+    .trim();
+var event = {
+  name: name,
+  dateAndTime: date + " " + time,
+  location: location,
+  description: description,
+  itemsToBring: itemsToBring
+};
+postEvent(event);
+console.log(event);
+console.log(date, time);
+
+function postEvent(eventData) {
+  $.post("/api/events", eventData).then(modalCreate.css("display", "none"));
+}
+
+// Get references to page elements
+var $eventName = $("#new-event-name-input");
+var $eventTime = $("#new-event-time-input");
+var $eventDate = $("#new-event-date-input");
+var $eventLocation = $("#address");
+var $eventDescription = $("#new-event-description-input");
+var $eventItemsToBring = $("#item_needed1");
+console.log("index.js");
 
 var thisUserID;
 $.get("/api/user_data").then(function(data) {
@@ -53,30 +98,26 @@ var API = {
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshGroups = function() {
-  var names = [];
   API.getGroups().then(function(data) {
     var $group = data.map(function(group) {
-      if (names.indexOf(group.name) === -1) {
-        names.push(group.name);
-        var $tr = $("<tr>");
+      var $a = $("<a>")
+        .text(group.name)
+        .attr("href", "/group/" + group.id);
 
-        var $tdGroup = $("<td>")
-          .text(group.name)
-          .css("width", "66.66%");
+      var $li = $("<li>")
+        .attr({
+          class: "list-group-item",
+          "data-id": group.id
+        })
+        .append($a);
 
-        var $button = $("<a>")
-          .addClass("waves-effect waves-light btn-small btn-flat btn-filled")
-          .text("View Group Page")
-          .attr("href", "/group/" + group.groupId);
+      var $button = $("<button>")
+        .addClass("waves-effect waves-light btn-small btn-flat btn-filled")
+        .text("View Group Page");
 
-        var $tdBtn = $("<td>")
-          .css("width", "33.33%")
-          .append($button);
+      $li.append($button);
 
-        $tr.append($tdGroup, $tdBtn);
-
-        return $tr;
-      }
+      return $li;
     });
 
     $groupList.empty();
@@ -84,14 +125,14 @@ var refreshGroups = function() {
   });
 };
 
-/// Function for creating group
+// handleFormSubmit is called whenever we submit a new example
+// Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var group = {
     name: $groupName.val().trim(),
-    password: $groupPassword.val().trim(),
-    userId: thisUserID
+    password: $groupPassword.val().trim()
   };
   console.log(group);
   if (!(group.name && group.password)) {
@@ -107,29 +148,8 @@ var handleFormSubmit = function(event) {
   $groupPassword.val("");
 };
 
-// function for joining a group
-var joinGroup = function(event) {
-  event.preventDefault();
-
-  var join = {
-    name: $groupJoinName.val().trim(),
-    password: $groupJoinPassword.val().trim(),
-    userId: thisUserID
-  };
-  console.log(join);
-  if (!(join.name && join.password)) {
-    alert("You must enter a name and password!");
-    return;
-  }
-
-  API.saveGroupUser(join).then(function() {
-    refreshGroups();
-    document.location.reload();
-  });
-  $groupJoinName.val("");
-  $groupJoinPassword.val("");
-};
-
+// handleDeleteBtnClick is called when an example's delete button is clicked
+// Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
@@ -142,5 +162,4 @@ var handleDeleteBtnClick = function() {
 refreshGroups();
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$joinGroupBtn.on("click", joinGroup);
 $groupList.on("click", ".delete", handleDeleteBtnClick);

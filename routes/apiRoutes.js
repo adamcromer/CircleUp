@@ -1,6 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
-
+// console.log(db)
 module.exports = function(app) {
   ///
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -18,10 +18,13 @@ module.exports = function(app) {
       .then(function() {
         res.redirect(307, "/api/login");
       })
-      .catch(function(err) {
-        console.log(err);
-        res.json(err);
-        // res.status(422).json(err.errors[0].message);
+      // .catch(function(err) {
+      //   console.log(err);
+      //   res.json(err);
+      // res.status(422).json(err.errors[0].message);
+      .catch(function() {
+        console.log();
+        res.json();
       });
   });
 
@@ -50,19 +53,45 @@ module.exports = function(app) {
   // Create a new group
   app.post("/api/groups", function(req, res) {
     db.Group.create(req.body).then(function(dbGroup) {
+      db.GroupUser.create({
+        groupId: dbGroup.id,
+        userId: req.body.userId,
+        name: dbGroup.name
+      });
       res.json(dbGroup);
     });
   });
 
   app.post("/api/group-user", function(req, res) {
-    db.GroupUser.create(req.body).then(function(dbGroupUser) {
-      res.json(dbGroupUser);
+    console.log(req.body.name, req.body.password);
+    db.Group.findAll({
+      where: {
+        name: req.body.name,
+        password: req.body.password
+      }
+    }).then(function(dbGroup) {
+      console.log(dbGroup);
+      if (!dbGroup[0]) {
+        console.log("incorect");
+        return;
+      } else {
+        db.GroupUser.create({
+          groupId: dbGroup[0].dataValues.id,
+          userId: req.body.userId,
+          name: dbGroup[0].dataValues.name
+        });
+        res.json(dbGroup);
+      }
     });
   });
 
   /// Get all groups associated with user
   app.get("/api/groups", function(req, res) {
-    db.Group.findAll({}).then(function(dbGroup) {
+    db.GroupUser.findAll({
+      where: {
+        userId: req.user.id
+      }
+    }).then(function(dbGroup) {
       res.json(dbGroup);
     });
   });
