@@ -54,6 +54,18 @@ function stringToArray(str) {
   return stringArr;
 }
 
+function clearNewEvent() {
+  $("#new-event-name-input").val("");
+  $("#new-event-date-input").val("");
+  $("#new-event-time-input").val("");
+  $("#address").val("");
+  $("#new-event-description-input").val("");
+  $("#item_needed1").val("");
+  $("#item_needed2").val("");
+  $("#item_needed3").val("");
+  $("#item_needed4").val("");
+}
+
 //When user clicks create, data gets posted and hides the modal
 createEvent.click(function() {
   var name = $("#new-event-name-input")
@@ -100,5 +112,8 @@ createEvent.click(function() {
 });
 
 function postEvent(eventData) {
-  $.post("/api/events", eventData).then(modalCreate.css("display", "none"));
+  $.post("/api/events", eventData).then(function() {
+    modalCreate.css("display", "none");
+    clearNewEvent();
+  });
 }
