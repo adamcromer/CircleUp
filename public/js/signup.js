@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("hello")
+  console.log("hello");
   // Getting references to our form and input
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
@@ -8,12 +8,11 @@ $(document).ready(function() {
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
-    console.log("buttonclick")
+    console.log("buttonclick");
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
       name: nameInput.val().trim()
-   
     };
     console.log(userData);
     if (!userData.email || !userData.password || !userData.name) {
@@ -33,14 +32,16 @@ $(document).ready(function() {
       email: email,
       password: password,
       name: name
-    }).then(function(data) {
-      window.location.replace(data);
-      // If there's an error, handle it by throwing up a bootstrap alert
-    }).catch(handleLoginErr);
+    })
+      .then(function(data) {
+        window.location.replace(data);
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+      .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
-    console.log("helloFrontend")
+    console.log("helloFrontend");
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }

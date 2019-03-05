@@ -129,10 +129,10 @@ BUTTONS
   padding: 0 3em;
 }
 
-.btn-filled {
+.btn-filled, .addeventatc, #addeventatc1 {
   border-radius: 54px;
   border: 2px solid #009BA0;
-  color: #fff;
+  color: #fff !important;
   background: #009BA0;
   padding: 0 3em;
 }
@@ -150,7 +150,16 @@ BUTTONS
 .btn-flat {
   margin-bottom: 0.5em !important;
 }
+.addeventatc, #addeventatc1c {
+padding: 20px;
+text-transform: uppercase;
+font-weight: normal;
+font-family: 'Poppins', sans-serif;
+}
 
+.addeventatc_icon {
+  display: none;
+}
 /*
 ==============================
 IMAGES

@@ -76,8 +76,7 @@
                         <div class="col s12">
                             <p>Make your own event!</p>
                             <p>
-                                <a id="btn-create"
-                                    class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create
+                                <a id="btn-create" class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create
                                     Event</a>
                             </p>
                         </div>
@@ -103,6 +102,10 @@
                     <label for="new-event-name">Event Name</label>
                 </div>
                 <div class="input-field">
+                    <input id="new-event-description-input" type="text" class="validate">
+                    <label for="new-event-description">Event Description</label>
+                </div>
+                <div class="input-field">
                     <input id="new-event-date-input" type="text" class="datepicker">
                     <label for="new-event-date">Event Date</label>
                 </div>
@@ -111,16 +114,70 @@
                     <label for="new-event-time">Event Time</label>
                 </div>
                 <div class="input-field">
-                    <input id="new-event-address-input" type="text" class="validate">
-                    <label for="new-event-address">Event Address</label>
+                    <input type="search" id="address" class="form-control" placeholder="Where are we going?" />
+                    {{!-- <p>Selected: <strong id="address-value">none</strong></p> --}}
+                    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+                    <script>
+                        (function () {
+                            var placesAutocomplete = places({
+                                appId: 'plMR3KWIP1YT',
+                                apiKey: '34f886eeef64ca86687224558cef96e4',
+                                container: document.querySelector('#address')
+                            });
+
+                           // var $address = document.querySelector('#address-value')
+                            //placesAutocomplete.on('change', function (e) {
+                                //$address.textContent = e.suggestion.value
+                                //console.log($address.textContent);
+                            //});
+
+                            placesAutocomplete.on('clear', function () {
+                                $address.textContent = 'none';
+                            });
+
+                        })();
+                      
+
+                    </script>
                 </div>
+                <p>Add Items Needed:</p>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Items Needed" id="item_needed1" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Items Needed" id="item_needed2" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Items Needed" id="item_needed3" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Items Needed" id="item_needed4" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+                    </form>
+                </div>
+
                 <p style="text-align: center;">
-                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create</a>
+                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center" id="create-event">Create</a>
                 </p>
             </form>
         </div>
     </div>
 </div>
 
-{{!-- <script src="/js/group.js"></script> --}}
+{{!--
+<script src="/js/group.js"></script> --}}
+<script src="/js/modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+=======
 <script src="/js/modal.js"></script>
