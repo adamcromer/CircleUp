@@ -25,7 +25,8 @@
     */
 
     .signup .sign-flex,
-    .signin .sign-flex {
+    .signin .sign-flex,
+    .error .sign-flex {
         height: auto;
     }
 
