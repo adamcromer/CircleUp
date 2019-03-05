@@ -6,7 +6,7 @@
     ==============================
     */
     
-    .grid-box {
+    .grid-box, .signin .grid-box {
         grid-template-columns: 1fr;
     }
 
@@ -25,13 +25,8 @@
     */
 
     .signup .sign-flex,
-    .signin .sign-flex {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        text-align: center;
-        padding: 2em 0;
+    .signin .sign-flex,
+    .error .sign-flex {
         height: auto;
     }
 
