@@ -62,7 +62,6 @@ module.exports = function(app) {
   });
 
   /// Get all groups associated with user
-  
   app.get("/api/groups", function(req, res) {
     db.Group.findAll({}).then(function(dbGroup) {
       res.json(dbGroup);
@@ -74,7 +73,7 @@ module.exports = function(app) {
       res.json(dbGroup);
     });
   });
-  
+
   // Event Routes
   // Get all events
   app.get("/api/events", function(req, res) {

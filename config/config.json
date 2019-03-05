@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Snowbird1",
+    "password": "SamanthaandAlice",
     "database": "new_events_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "SamanthaandAlice",
+    "password": "Timmer11!",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

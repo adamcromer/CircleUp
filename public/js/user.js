@@ -1,16 +1,17 @@
+/* eslint-disable no-unused-vars */
 // Get references to page elements
 var $groupName = $("#new-group-input");
 var $groupPassword = $("#new-group-password-input");
 var $submitBtn = $("#btn-signup");
 var $groupList = $("#group-list");
-console.log("index.js")
+console.log("index.js");
 
 var thisUserID;
-$.get("/api/user_data").then(function (data) {
-    $(".user-name").text(data.name);
-    $(".user-email").text(data.email);
-    thisUserID = data.id;
-  });
+$.get("/api/user_data").then(function(data) {
+  $(".user-name").text(data.name);
+  $(".user-email").text(data.email);
+  thisUserID = data.id;
+});
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveGroups: function(group) {
@@ -51,24 +52,24 @@ var API = {
 var refreshGroups = function() {
   API.getGroups().then(function(data) {
     var $group = data.map(function(group) {
-      var $a = $("<a>")
+      var $tr = $("<tr>");
+
+      var $tdGroup = $("<td>")
         .text(group.name)
+        .css("width", "66.66%");
+
+      var $button = $("<a>")
+        .addClass("waves-effect waves-light btn-small btn-flat btn-filled")
+        .text("View Group Page")
         .attr("href", "/group/" + group.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": group.id
-        })
-        .append($a);
+      var $tdBtn = $("<td>")
+        .css("width", "33.33%")
+        .append($button);
 
-      var $button = $("<button>")
-        .addClass("waves-effect waves-light btn-small btn-flat btn-filled")
-        .text("View Group Page");
+      $tr.append($tdGroup, $tdBtn);
 
-      $li.append($button);
-
-      return $li;
+      return $tr;
     });
 
     $groupList.empty();
@@ -85,7 +86,7 @@ var handleFormSubmit = function(event) {
     name: $groupName.val().trim(),
     password: $groupPassword.val().trim()
   };
-console.log(group);
+  console.log(group);
   if (!(group.name && group.password)) {
     alert("You must enter a name and password!");
     return;
@@ -93,7 +94,7 @@ console.log(group);
 
   API.saveGroups(group).then(function() {
     refreshGroups();
-    document.location.reload() 
+    document.location.reload();
   });
   $groupName.val("");
   $groupPassword.val("");

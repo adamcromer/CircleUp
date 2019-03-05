@@ -111,8 +111,16 @@ nav {
 
 nav .brand-logo {
   font-family: 'Poppins', sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+  display: flex;
+  align-items: center;
+}
+
+.nav-img {
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
 }
 
 /*
@@ -148,10 +156,11 @@ BUTTONS
 }
 
 .btn-flat {
-  margin-bottom: 0.5em !important;
+  margin: 0.5em 0;
 }
+
 .addeventatc, #addeventatc1c {
-padding: 20px;
+padding: 3em 0;
 text-transform: uppercase;
 font-weight: normal;
 font-family: 'Poppins', sans-serif;
@@ -173,6 +182,21 @@ IMAGES
   background-image: linear-gradient(to bottom right, #00bcd4, #00796b);
   margin: 2em auto; 
   border-radius: 50%;
+}
+
+.placeholder-icon {
+  -webkit-animation: placeholder-ani 16s linear infinite;
+  animation: placeholder-ani 16s linear infinite;
+}
+
+@-webkit-keyframes placeholder-ani {
+  0%   {-webkit-transform: rotateZ(0deg);}
+  100%  {-webkit-transform: rotateZ(-360deg);}
+}
+
+@keyframes placeholder-ani {
+  0%   {transform: rotateZ(0deg);}
+  100%  {transform: rotateZ(-360deg);}
 }
 
 /*
@@ -200,13 +224,22 @@ SIGN-IN/UP PAGE
   position: absolute;
   margin: 2em;
   font-family: 'Poppins', sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 700;
+  /* text-transform: uppercase; */
   color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px; 
 }
 
 .signup .sign-flex,
-.signin .sign-flex {
+.signin .sign-flex,
+.error .sign-flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,6 +258,58 @@ SIGN-IN/UP PAGE
 
 .sign-sidebar h3 {
   color: #fff;
+}
+
+/* 
+==============================
+404 PAGE
+==============================
+*/
+
+.error .sign-sidebar {
+  background-color: #DE392C;
+  background-image: linear-gradient(to bottom right, #DE392C, #d32f2f 50%);
+  color: #fff;
+}
+
+.error h3 {
+  color: #DE392C;
+}
+
+.error .big {
+  font-size: 2em;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-error {
+  border-radius: 54px;
+  border: 2px solid #DE392C;
+  color: #fff;
+  background: #DE392C;
+  padding: 0 3em;
+}
+
+.btn-error:hover {
+  color: #DE392C;
+}
+
+.error .material-icons {
+  font-size: 10em;
+}
+
+.error .error-icon {
+  -webkit-animation: icon-ani 4s linear infinite;
+  animation: icon-ani 4s linear infinite;
+}
+
+@-webkit-keyframes icon-ani {
+  0%   {-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+  100%  {-webkit-transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);}
+}
+
+@keyframes icon-ani {
+  0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+  100%  {transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);}
 }
 
 /* 
