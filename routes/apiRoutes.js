@@ -53,13 +53,27 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/group-user", function(req, res) {
+    db.GroupUser.create(req.body).then(function(dbGroupUser) {
+      res.json(dbGroupUser);
+    });
+  });
+
   /// Get all groups associated with user
-  // Get all events
+  
   app.get("/api/groups", function(req, res) {
     db.Group.findAll({}).then(function(dbGroup) {
       res.json(dbGroup);
     });
   });
+
+  app.delete("/api/groups/:id", function(req, res) {
+    db.Group.destroy({ where: { id: req.params.id } }).then(function(dbGroup) {
+      res.json(dbGroup);
+    });
+  });
+
+  
   
   // Event Routes
   // Get all events
