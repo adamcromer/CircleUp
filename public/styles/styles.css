@@ -148,8 +148,9 @@ BUTTONS
 }
 
 .btn-flat {
-  margin-bottom: 0.5em !important;
+  margin: 0.5em 0;
 }
+
 .addeventatc, #addeventatc1c {
 padding: 20px;
 text-transform: uppercase;
@@ -206,7 +207,8 @@ SIGN-IN/UP PAGE
 }
 
 .signup .sign-flex,
-.signin .sign-flex {
+.signin .sign-flex,
+.error .sign-flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,6 +227,58 @@ SIGN-IN/UP PAGE
 
 .sign-sidebar h3 {
   color: #fff;
+}
+
+/* 
+==============================
+404 PAGE
+==============================
+*/
+
+.error .sign-sidebar {
+  background-color: #DE392C;
+  background-image: linear-gradient(to bottom right, #DE392C, #d32f2f 50%);
+  color: #fff;
+}
+
+.error h3 {
+  color: #DE392C;
+}
+
+.error .big {
+  font-size: 2em;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-error {
+  border-radius: 54px;
+  border: 2px solid #DE392C;
+  color: #fff;
+  background: #DE392C;
+  padding: 0 3em;
+}
+
+.btn-error:hover {
+  color: #DE392C;
+}
+
+.error .material-icons {
+  font-size: 10em;
+}
+
+.error .error-icon {
+  -webkit-animation: icon-ani 4s infinite;
+  animation: icon-ani 4s infinite;
+}
+
+@-webkit-keyframes icon-ani {
+  0%   {-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+  100%  {-webkit-transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);}
+}
+
+@keyframes icon-ani {
+  0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+  100%  {transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);}
 }
 
 /* 
