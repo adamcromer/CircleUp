@@ -27,11 +27,23 @@
             <div class="round-right">
                 <div class="padded-box">
                     <h3 class="title-color">Your Groups</h3>
-
                     <table class="striped highlight">
-                        <tbody>
+                        <tbody id="group-list" class="list-group">
+                            {{!-- <ul> --}}
+                                {{!-- {{#each groups}}
+                                <li data-id="{{this.id}}" class="list-group-item">
+                                    <a href="example/{{this.id}}">{{this.text}}</a>
+                                    <button class="btn btn-danger float-right delete">ｘ</button>
+                                </li>
+                                {{/each}} --}}
+                            {{!-- </ul> --}}
+                        </tbody>
+                    </table>
+
+                    {{!-- <table class="striped highlight">
+                        <tbody class="">
                             <tr>
-                                <td>
+                                <td id="group-display">
                                     Group Alpha
                                     <a href="/group" class="waves-effect waves-light btn-small btn-flat btn-filled">View
                                         Group Page &raquo;</a>
@@ -52,7 +64,7 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
 
                     <div style="text-align: center;" class="row">
                         <div class="col s6">
@@ -111,7 +123,7 @@
             <h5 class="modal-title">Create a Group</h5>
         </div>
         <div class="modal-body">
-            <form class="signup">
+            <form class="group-signup">
                 <div class="input-field">
                     <input id="new-group-input" type="text" class="validate">
                     <label for="new-group">Group Name</label>
@@ -120,8 +132,10 @@
                     <input id="new-group-password-input" type="password" class="validate">
                     <label for="new-group-password">Group Password</label>
                 </div>
-                <p style="text-align: center;">
-                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create</a>
+                {{!-- <p style="text-align: center;">
+                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center" type="submit">Create</a> --}}
+                <button type="submit" id="btn-signup"
+                    class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create</button>
                 </p>
             </form>
         </div>
