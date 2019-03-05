@@ -113,6 +113,14 @@ nav .brand-logo {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   /* text-transform: uppercase; */
+  display: flex;
+  align-items: center;
+}
+
+.nav-img {
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
 }
 
 /*
@@ -176,6 +184,21 @@ IMAGES
   border-radius: 50%;
 }
 
+.placeholder-icon {
+  -webkit-animation: placeholder-ani 16s linear infinite;
+  animation: placeholder-ani 16s linear infinite;
+}
+
+@-webkit-keyframes placeholder-ani {
+  0%   {-webkit-transform: rotateZ(0deg);}
+  100%  {-webkit-transform: rotateZ(-360deg);}
+}
+
+@keyframes placeholder-ani {
+  0%   {transform: rotateZ(0deg);}
+  100%  {transform: rotateZ(-360deg);}
+}
+
 /*
 ==============================
 TABLES
@@ -204,6 +227,14 @@ SIGN-IN/UP PAGE
   font-weight: 700;
   /* text-transform: uppercase; */
   color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px; 
 }
 
 .signup .sign-flex,
@@ -267,8 +298,8 @@ SIGN-IN/UP PAGE
 }
 
 .error .error-icon {
-  -webkit-animation: icon-ani 4s infinite;
-  animation: icon-ani 4s infinite;
+  -webkit-animation: icon-ani 4s linear infinite;
+  animation: icon-ani 4s linear infinite;
 }
 
 @-webkit-keyframes icon-ani {
