@@ -40,7 +40,14 @@ $(document).ready(function() {
       .catch(handleLoginErr);
   }
 
-  function handleLoginErr(err) {
+  // function handleLoginErr(err) {
+  //   console.log("helloFrontend");
+  //   $("#alert .msg").text(err.responseJSON);
+  //   $("#alert").fadeIn(500);
+  // }
+
+  function handleLoginErr() {
+    alert("Duplicate entry: Please sing in with a different email.");
     console.log("helloFrontend");
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
