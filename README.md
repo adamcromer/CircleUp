@@ -1,13 +1,25 @@
-# Kick A Coders
+###### Kick A CoderS present ######
+# PROJECT 2 #
 
-##Requirements
+## Technologies Used ##
 
-Must use a Node and Express Web Server
-Must be backed by a MySQL Database with a Sequelize ORM
-Must have both GET and POST routes for retrieving and adding new data
-Must be deployed using Heroku (with Data)
-Must utilize at least one new library, package, or technology that we haven’t discussed
-Must have a polished frontend / UI
-Must have folder structure that meets MVC Paradigm
-Must meet good quality coding standards (indentation, scoping, naming)
-Must not expose sensitive API key information on the server, see Protecting-API-Keys-In-Node.md
+This project uses a `Node and Express Web Server` backed by a `MySQL Database` with a `Sequelize ORM`. Both `GET and POST routes` are used for retrieving and adding new data. PROJECT 2 is deployed using `Heroku` and `JAWSdb`.
+
+## Project Tutorial ## 
+
+1. **Create an account**.
+
+2. **Join (or create!) a group**.
+
+3. **Join (or create!) an event**.
+
+## Project Team ##
+
+This project was built by:
+
+| Team Member       | GitHub Profile | Role          |
+| ----------------- | -------------- | ------------- |
+| Adam Cromer       | @[adamcromer](https://github.com/adamcromer)     | Back-end   |
+| Scott Olafsen     | @[scottolafsen](https://github.com/scottolafsen) | Back-end   |
+| Chelsea Timmerman | @[chelstimm](https://github.com/chelstimm)       | Front-end  |
+| Katie Sexton      | @[fkakatie](https://github.com/fkakatie)         | Front-end  |
