@@ -36,13 +36,15 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
-
-  User.associate = function(models) {
-    User.belongsToMany(models.Group, {
-      through: "GroupUser",
-      as: "group",
-      foreignKey: "userId"
-    });
-  };
+  // User.associate = function(models) {
+  //   User.belongsToMany(models.Group, {
+  //     through: "GroupUser",
+  //     as: "group"
+  //     // foreignKey: "userxId"
+  //   });
+  // };
+ 
   return User;
 };
+
+

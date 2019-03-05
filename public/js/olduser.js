@@ -44,8 +44,47 @@
 //   //   $("#alert .msg").text(err.responseJSON);
 //   //   $("#alert").fadeIn(500);
 //   // }
-
-
-
-
 // });
+[ Group {
+    dataValues:
+     { id: 1,
+       name: 'jimmys',
+       password: 'password',
+       createdAt: 2019-03-05T21:15:25.000Z,
+       updatedAt: 2019-03-05T21:15:25.000Z },
+    _previousDataValues:
+     { id: 1,
+       name: 'jimmys',
+       password: 'password',
+       createdAt: 2019-03-05T21:15:25.000Z,
+       updatedAt: 2019-03-05T21:15:25.000Z },
+    _changed: {},
+    _modelOptions:
+     { timestamps: true,
+       validate: {},
+       freezeTableName: false,
+       underscored: false,
+       underscoredAll: false,
+       paranoid: false,
+       rejectOnEmpty: false,
+       whereCollection: [Object],
+       schema: null,
+       schemaDelimiter: '',
+       defaultScope: {},
+       scopes: [],
+       indexes: [],
+       name: [Object],
+       omitNull: false,
+       sequelize: [Object],
+       hooks: {},
+       uniqueKeys: [Object] },
+    _options:
+     { isNewRecord: false,
+       _schema: null,
+       _schemaDelimiter: '',
+       raw: true,
+       attributes: [Array] },
+    __eagerlyLoadedAssociations: [],
+    isNewRecord: false } ]
+
+
