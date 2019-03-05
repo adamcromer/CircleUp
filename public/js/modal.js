@@ -100,6 +100,7 @@ createEvent.click(function() {
     $("#item_needed4")
       .val()
       .trim();
+
   var event = {
     name: name,
     dateAndTime: date + " " + time,
