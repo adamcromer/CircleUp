@@ -111,8 +111,8 @@ nav {
 
 nav .brand-logo {
   font-family: 'Poppins', sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 700;
+  /* text-transform: uppercase; */
 }
 
 /*
@@ -152,7 +152,7 @@ BUTTONS
 }
 
 .addeventatc, #addeventatc1c {
-padding: 20px;
+padding: 3em 0;
 text-transform: uppercase;
 font-weight: normal;
 font-family: 'Poppins', sans-serif;
@@ -201,8 +201,8 @@ SIGN-IN/UP PAGE
   position: absolute;
   margin: 2em;
   font-family: 'Poppins', sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 700;
+  /* text-transform: uppercase; */
   color: #fff;
 }
 
