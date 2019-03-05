@@ -21,12 +21,19 @@ module.exports = function(app) {
   });
 
   // Load USER page
+  // app.get("/user", isAuthenticated, function(req, res) {
+  //   db.Group.findAll({}).then(function(dbGroup) {
+  //     res.render("user", {
+  //       groups: dbGroup
+  //     });
+  //   });
+  // });
   app.get("/user", isAuthenticated, function(req, res) {
     res.render("user");
   });
 
   // Load GROUP page
-  app.get("/group", isAuthenticated, function(req, res) {
+  app.get("/group/:id", isAuthenticated, function(req, res) {
     res.render("group");
   });
 

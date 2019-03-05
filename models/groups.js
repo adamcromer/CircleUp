@@ -7,6 +7,10 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true
       }
+    },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
   });
   Group.associate = function(models) {
@@ -18,3 +22,4 @@ module.exports = function(sequelize, DataTypes) {
   };
   return Group;
 };
+
