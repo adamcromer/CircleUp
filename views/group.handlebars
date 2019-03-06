@@ -115,21 +115,10 @@
                     <script>
                         (function () {
                             var placesAutocomplete = places({
-                                appId: 'plMR3KWIP1YT',
-                                apiKey: '34f886eeef64ca86687224558cef96e4',
+                                appId: places.appId,
+                                apiKey: places.apiKey,
                                 container: document.querySelector('#address')
                             });
-
-                            // var $address = document.querySelector('#address-value')
-                            //placesAutocomplete.on('change', function (e) {
-                            //$address.textContent = e.suggestion.value
-                            //console.log($address.textContent);
-                            //});
-
-                            placesAutocomplete.on('clear', function () {
-                                $address.textContent = 'none';
-                            });
-
                         })();
 
                     </script>
