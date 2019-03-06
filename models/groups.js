@@ -8,18 +8,10 @@ module.exports = function(sequelize, DataTypes) {
         notEmpty: true
       }
     },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
-  // Group.associate = function(models) {
-  //   Group.belongsToMany(models.User, {
-  //     as: "users",
-  //     through: { model: models.GroupUser, unique: false },
-  //     foreignKey: "groupId"
-  //   });
-  // };
   return Group;
 };
-

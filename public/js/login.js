@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   // Getting references to our form and inputs
   var loginForm = $("form.login");
   var emailInput = $("input#email-input");
@@ -34,9 +33,9 @@ $(document).ready(function() {
         window.location.replace(data);
         // If there's an error, log the error
       })
-      .catch(handleLoginErr)
-        console.log(handleLoginErr);
-      };
+      .catch(handleLoginErr);
+    console.log(handleLoginErr);
+  }
   function handleLoginErr() {
     alert("Invalid: Please enter your information correctly.");
     console.log("helloFrontend");

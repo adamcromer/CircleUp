@@ -9,7 +9,7 @@ Keep your friends and party on with **CircleUp**!
 
 ## Technologies Used ##
 
-This project uses a `Node and Express Web Server` backed by a `MySQL Database` with a `Sequelize ORM`. Both `GET and POST routes` are used for retrieving and adding new data. PROJECT 2 is deployed using `Heroku` and `JAWSdb`.
+This project uses a `Node and Express Web Server` backed by a `MySQL Database` with a `Sequelize ORM`. Both `GET and POST routes` are used for retrieving and adding new data. **CircleUp** is deployed using `Heroku` and `JAWSdb`.
 
 ## Project Tutorial ## 
 
