@@ -102,31 +102,23 @@ createEvent.click(function(event) {
       .val()
       .trim();
 
-  if (
-    name === "" ||
-    date === "" ||
-    time === "" ||
-    location === "" ||
-    description === ""
-  ) {
-    alert(
-      "Name, Date, Time, Location, and Description is required to create an event."
-    );
-  } else {
-    var newEvent = {
-      name: name,
-      dateAndTime: date + " " + time,
-      location: location,
-      description: description,
-      itemsToBring: itemsToBring
-    };
-    postEvent(newEvent);
-  }
+  var event = {
+    name: name,
+    dateAndTime: date + " " + time,
+    location: location,
+    description: description,
+    itemsToBring: itemsToBring
+  };
+  postEvent(event);
+  console.log(event);
+  console.log(date, time);
+  return;
 });
 
 function postEvent(eventData) {
   $.post("/api/events", eventData).then(function() {
     modalCreate.css("display", "none");
     clearNewEvent();
+    document.location.reload();
   });
 }

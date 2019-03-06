@@ -57,7 +57,7 @@ module.exports = function(app) {
       res.json(dbGroup);
     });
   });
-
+  /// Joins a group
   app.post("/api/group-user", function(req, res) {
     console.log(req.body.name, req.body.password);
     db.Group.findAll({
