@@ -2,6 +2,7 @@ $(document).ready(function () {
   // close about info
   $('#btn-about').click(function () {
     $('.about').css('opacity', '0').css('z-index', '0');
+    $('.signup').css('display', 'block');
   });
 
   // Getting references to our form and input
