@@ -142,7 +142,7 @@ BUTTONS
   border: 2px solid #009BA0;
   color: #fff !important;
   background: #009BA0;
-  padding: 0 3em;
+  padding: 0 3em !important;
 }
 
 .btn-small {
@@ -160,10 +160,10 @@ BUTTONS
 }
 
 .addeventatc, #addeventatc1c {
-padding: 3em 0;
 text-transform: uppercase;
 font-weight: normal;
 font-family: 'Poppins', sans-serif;
+margin: 1em;
 }
 
 .addeventatc_icon {
