@@ -68,7 +68,7 @@ function clearNewEvent() {
 }
 
 //When user clicks create, data gets posted and hides the modal
-createEvent.click(function() {
+createEvent.click(function(event) {
   event.preventDefault();
   var name = $("#new-event-name-input")
     .val()
@@ -113,14 +113,14 @@ createEvent.click(function() {
       "Name, Date, Time, Location, and Description is required to create an event."
     );
   } else {
-    var event = {
+    var newEvent = {
       name: name,
       dateAndTime: date + " " + time,
       location: location,
       description: description,
       itemsToBring: itemsToBring
     };
-    postEvent(event);
+    postEvent(newEvent);
   }
 });
 
