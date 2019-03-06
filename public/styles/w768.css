@@ -6,7 +6,9 @@
     ==============================
     */
     
-    .grid-box, .signin .grid-box {
+    .grid-box, 
+    .signin .grid-box, 
+    .about .grid-box {
         grid-template-columns: 1fr;
     }
 
