@@ -57,7 +57,7 @@ module.exports = function(app) {
       res.json(dbGroup);
     });
   });
-
+  /// Joins a group
   app.post("/api/group-user", function(req, res) {
     console.log(req.body.name, req.body.password)
     db.Group.findAll({
@@ -98,8 +98,9 @@ module.exports = function(app) {
   // Event Routes
   // Get all events
   app.get("/api/events", function(req, res) {
-    db.Event.findAll({}).then(function(dbEvent) {
-      res.json(dbEvent);
+    db.Event.findAll({
+    }).then(function(dbEvent) {
+      res.json(dbEvent)
     });
   });
 

@@ -34,12 +34,22 @@ module.exports = function(app) {
 
   // Load GROUP page
   app.get("/group/:id", isAuthenticated, function(req, res) {
-    res.render("group");
+    db.Group.findOne({ where: { id: req.params.id } }).then(function(dbGroup) {
+      // console.log(dbEvent)
+      res.render("group", {
+        group: dbGroup
+      });
+    });
   });
 
   // Load EVENT page
-  app.get("/event", function(req, res) {
-    res.render("event");
+  app.get("/event/:id", function(req, res) {
+    db.Event.findOne({ where: { id: req.params.id } }).then(function(dbEvent) {
+      // console.log(dbEvent)
+      res.render("event", {
+        event: dbEvent
+      });
+    });
   });
 
   // Load example page and pass in an example by id
