@@ -4,5 +4,5 @@ exports.places = {
 };
 
 exports.map = {
-    key = process.env.MAPQUEST_KEY,
+    key: process.env.MAPQUEST_KEY,
 }
