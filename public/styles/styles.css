@@ -104,6 +104,10 @@ ABOUT
 ==============================
 */
 
+body {
+  
+}
+
 .about {
   opacity: 1;
   position: fixed; 
@@ -111,6 +115,10 @@ ABOUT
   left: 0;
   top: 0;
   transition: 0.4s;
+  width: 100vw;
+  height: 100%;
+  overflow-y: scroll;
+  /* overflow-x: hidden; */
 }
 
 .border-bottom {
@@ -277,6 +285,10 @@ SIGN-IN/UP PAGE
   height: 20px;
   width: 20px;
   margin-right: 5px; 
+}
+
+.signup {
+  display: none;
 }
 
 .signup .sign-flex,
