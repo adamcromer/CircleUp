@@ -18,7 +18,7 @@
             <div class="round-left sidebar">
                 <div class="padded-box">
                     <img class="placeholder-icon" src="/images/CircleUp_Logo.png">
-                    <h3>Coders</h3>
+                    <h3>{{group.name}}</h3>
                     <a href="#" class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">Invite a Member</a>
                     <a href="#" class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">Leave Group</a>
                     <h3>Group Members</h3>
@@ -43,27 +43,9 @@
             <div class="round-right">
                 <div class="padded-box">
                     <h3>Group Events</h3>
-                    <table class="striped highlight">
-                        <tbody>
-                            <tr>
-                                <td style="font-weight: 700">Coding BBQ</td>
-                                <td>3/25/2019 6:30pm</td>
-                                <td><a href="/event" class="waves-effect waves-light btn-small btn-flat btn-filled">View
-                                        Event</a></td>
-                            </tr>
-                            <tr>
-                                <td style="font-weight: 700">Zoom Meetup</td>
-                                <td>4/1/2019 6:30pm</td>
-                                <td><a href="/event" class="waves-effect waves-light btn-small btn-flat btn-filled">View
-                                        Event</a></td>
-
-                            </tr>
-                            <tr>
-                                <td style="font-weight: 700">Grad Party</td>
-                                <td>4/27/2019 6:30pm</td>
-                                <td><a href="/event" class="waves-effect waves-light btn-small btn-flat btn-filled">View
-                                        Event</a></td>
-                            </tr>
+                     <table class="striped highlight">
+                        <tbody id="event-list" class="list-group">
+                       
                         </tbody>
                     </table>
 
@@ -154,13 +136,11 @@
     </div>
 </div>
 
-{{!--
-<script src="/js/group.js"></script> --}}
+
+<script src="/js/group.js"></script>
 <script src="/js/modal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
-=======
-<script src="/js/modal.js"></script>

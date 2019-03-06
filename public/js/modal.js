@@ -68,7 +68,8 @@ function clearNewEvent() {
 }
 
 //When user clicks create, data gets posted and hides the modal
-createEvent.click(function() {
+createEvent.click(function(event) {
+  event.preventDefault();
   var name = $("#new-event-name-input")
     .val()
     .trim();
@@ -111,11 +112,13 @@ createEvent.click(function() {
   postEvent(event);
   console.log(event);
   console.log(date, time);
+  return;
 });
 
 function postEvent(eventData) {
   $.post("/api/events", eventData).then(function() {
     modalCreate.css("display", "none");
     clearNewEvent();
+    document.location.reload();
   });
 }
