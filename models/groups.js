@@ -13,12 +13,5 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  // Group.associate = function(models) {
-  //   Group.belongsToMany(models.User, {
-  //     as: "users",
-  //     through: { model: models.GroupUser, unique: false },
-  //     foreignKey: "groupId"
-  //   });
-  // };
   return Group;
 };

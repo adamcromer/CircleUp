@@ -38,13 +38,8 @@ module.exports = function(app) {
   });
 
   // Load EVENT page
-  app.get("/event", function(req, res) {
+  app.get("/event/:id", isAuthenticated, function(req, res) {
     res.render("event");
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    res.render("example");
   });
 
   // Render 404 page for any unmatched routes
