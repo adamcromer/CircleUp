@@ -69,6 +69,7 @@ function clearNewEvent() {
 
 //When user clicks create, data gets posted and hides the modal
 createEvent.click(function() {
+  event.preventDefault();
   var name = $("#new-event-name-input")
     .val()
     .trim();

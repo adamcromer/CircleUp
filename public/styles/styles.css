@@ -287,9 +287,9 @@ SIGN-IN/UP PAGE
   margin-right: 5px; 
 }
 
-.signup {
+/* .signup {
   display: none;
-}
+} */
 
 .signup .sign-flex,
 .signin .sign-flex,
