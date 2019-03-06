@@ -1,12 +1,16 @@
-$(document).ready(function() {
-  console.log("hello");
+$(document).ready(function () {
+  // close about info
+  $('#btn-about').click(function () {
+    $('.about').css('opacity', '0').css('z-index', '0');
+  });
+
   // Getting references to our form and input
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
   var nameInput = $("input#name-input");
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", function(event) {
+  signUpForm.on("submit", function (event) {
     event.preventDefault();
     console.log("buttonclick");
     var userData = {
@@ -33,7 +37,7 @@ $(document).ready(function() {
       password: password,
       name: name
     })
-      .then(function(data) {
+      .then(function (data) {
         window.location.replace(data);
         // If there's an error, handle it by throwing up a bootstrap alert
       })

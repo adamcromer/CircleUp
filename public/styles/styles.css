@@ -20,6 +20,22 @@ b, strong {
   font-weight: 700;
 }
 
+.big {
+  font-size: 2em;
+  line-height: 1.15em;
+  margin: 0.5em 0;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+}
+
+.med {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  margin: 0.5em 0;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+}
+
 .brand-text {
   color: #009BA0 !important;
 }
@@ -58,7 +74,8 @@ COLUMN SETUP
   grid-template-columns: 295px 1fr;
 }
 
-.signin .grid-box {
+.signin .grid-box,
+.about .grid-box {
   grid-template-columns: 1fr 295px;
 }
 
@@ -79,6 +96,31 @@ COLUMN SETUP
 
 .padded-box {
   padding: 1.5em;
+}
+
+/*
+==============================
+ABOUT 
+==============================
+*/
+
+.about {
+  opacity: 1;
+  position: fixed; 
+  z-index: 999; 
+  left: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.border-bottom {
+  border-bottom: 3px solid rgba(255,255,255, 0.2);
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.material-icons.mi-84 { 
+  font-size: 84px; 
 }
 
 /*
@@ -142,7 +184,7 @@ BUTTONS
   border: 2px solid #009BA0;
   color: #fff !important;
   background: #009BA0;
-  padding: 0 3em;
+  padding: 0 3em !important;
 }
 
 .btn-small {
@@ -160,10 +202,10 @@ BUTTONS
 }
 
 .addeventatc, #addeventatc1c {
-padding: 3em 0;
 text-transform: uppercase;
 font-weight: normal;
 font-family: 'Poppins', sans-serif;
+margin: 1em;
 }
 
 .addeventatc_icon {
@@ -239,7 +281,8 @@ SIGN-IN/UP PAGE
 
 .signup .sign-flex,
 .signin .sign-flex,
-.error .sign-flex {
+.error .sign-flex,
+.about .sign-flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -247,10 +290,12 @@ SIGN-IN/UP PAGE
   text-align: center;
   padding: 2em 0;
   height: calc(100vh - 4em);
+  min-height: 660px;
 }
 
 .signup .sign-sidebar,
-.signin .sign-sidebar {
+.signin .sign-sidebar, 
+.about .sign-sidebar {
   background-color: #009BA0;
   background-image: linear-gradient(to bottom right, #00bcd4, #00796b);
   color: #fff;
@@ -274,11 +319,6 @@ SIGN-IN/UP PAGE
 
 .error h3 {
   color: #DE392C;
-}
-
-.error .big {
-  font-size: 2em;
-  font-family: 'Poppins', sans-serif;
 }
 
 .btn-error {
