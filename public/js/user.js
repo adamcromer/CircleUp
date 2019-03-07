@@ -53,29 +53,29 @@ var API = {
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshGroups = function() {
-  var names = []
+  var names = [];
   API.getGroups().then(function(data) {
     var $group = data.map(function(group) {
       if (names.indexOf(group.name) === -1) {
         names.push(group.name);
-      var $tr = $("<tr>");
+        var $tr = $("<tr>");
 
-      var $tdGroup = $("<td>")
-        .text(group.name)
-        .css("width", "66.66%");
+        var $tdGroup = $("<td>")
+          .text(group.name)
+          .css("width", "66.66%");
 
-      var $button = $("<a>")
-        .addClass("waves-effect waves-light btn-small btn-flat btn-filled")
-        .text("View Group Page")
-        .attr("href", "/group/" + group.groupId);
+        var $button = $("<a>")
+          .addClass("waves-effect waves-light btn-small btn-flat btn-filled")
+          .text("View Group Page")
+          .attr("href", "/group/" + group.groupId);
 
-      var $tdBtn = $("<td>")
-        .css("width", "33.33%")
-        .append($button);
+        var $tdBtn = $("<td>")
+          .css("width", "33.33%")
+          .append($button);
 
-      $tr.append($tdGroup, $tdBtn);
+        $tr.append($tdGroup, $tdBtn);
 
-      return $tr;
+        return $tr;
       }
     });
 
@@ -142,5 +142,5 @@ var handleDeleteBtnClick = function() {
 refreshGroups();
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$joinGroupBtn.on("click", joinGroup)
+$joinGroupBtn.on("click", joinGroup);
 $groupList.on("click", ".delete", handleDeleteBtnClick);

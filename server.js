@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var session = require("express-session");
-var keys = require('./keys.js');
+var keys = require("./keys.js");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 

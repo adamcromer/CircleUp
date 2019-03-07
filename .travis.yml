@@ -3,9 +3,6 @@ node_js: "8"
 branches:
   only:
   - master
-  - adamBranch
-  - katie
-  - scotty
 cache:
   directories:
     - node_modules
