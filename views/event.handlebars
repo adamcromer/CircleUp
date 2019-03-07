@@ -54,7 +54,7 @@
                 <div class="padded-box">
                     <h3 class="title-color">{{event.name}}</h3>
 
-                    <p>Event Info. Let's get together and talk all things code. Please select an item below to bring to our meetup. Should be a lot of fun. See ya then!</p>
+                    <p>{{event.description}}</p>
 
                     <div class="row">
                         <div class="col s5">
@@ -79,6 +79,10 @@
 
                         <div class="col s7">
                             <h4 class="title-color">Items Needed</h4>
+                            <ul id="example-list" class="list-group">
+          {{!-- {{event.itemsToBring}} --}}
+         
+        </ul>
                             <p>Please select an item to bring from the list below:</p>
                             <p>
                                 <label>
