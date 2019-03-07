@@ -3,6 +3,6 @@ exports.places = {
   apiKey: process.env.PLACES_KEY
 };
 
-// exports.map = {
-//      .key: process.env.MAPQUEST_KEY,
-// };
+exports.map = {
+  key: process.env.MAPQUEST_KEY
+};
