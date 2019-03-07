@@ -99,6 +99,7 @@ module.exports = function(app) {
   // Get all events
   app.get("/api/events", function(req, res) {
     db.Event.findAll({
+      // where: { groupId: req.body.groupId }
     }).then(function(dbEvent) {
       res.json(dbEvent)
     });
@@ -106,6 +107,7 @@ module.exports = function(app) {
 
   // Create a new event
   app.post("/api/events", function(req, res) {
+    console.log(req.query.id)
     db.Event.create(req.body).then(function(dbEvent) {
       res.json(dbEvent);
     });
