@@ -1,5 +1,9 @@
 /* eslint-disable no-unused-vars */
 // Get the modal
+var pathArray = window.location.pathname.split('/');
+var groupId = parseInt(pathArray[2]);
+console.log(groupId);
+
 var modalJoin = $("#modal-join");
 var modalCreate = $("#modal-create");
 
@@ -107,7 +111,8 @@ createEvent.click(function(event) {
     dateAndTime: date + " " + time,
     location: location,
     description: description,
-    itemsToBring: itemsToBring
+    itemsToBring: itemsToBring,
+    groupId: groupId
   };
   postEvent(event);
   console.log(event);

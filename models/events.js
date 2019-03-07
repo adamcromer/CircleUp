@@ -19,6 +19,10 @@ module.exports = function(sequelize, DataTypes) {
     itemsToBring: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    groupId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
   // Event.associate = function(models) {

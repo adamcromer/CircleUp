@@ -43,9 +43,11 @@ console.log(date, time);
 
 var $eventList = $("#event-list");
 
-// $.get("/api/events").then(function(data) {
+// $.get("/group/:id").then(function(data) {
 //   console.log(data);
 // });
+var pathArray = window.location.pathname.split('/');
+var groupId = pathArray[2];
 
 $.get("/api/events").then(function(data) {
   console.log(data);

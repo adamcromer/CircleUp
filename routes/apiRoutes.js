@@ -101,13 +101,16 @@ module.exports = function(app) {
   // Event Routes
   // Get all events
   app.get("/api/events", function(req, res) {
-    db.Event.findAll({}).then(function(dbEvent) {
-      res.json(dbEvent);
+    db.Event.findAll({
+      // where: { groupId: req.body.groupId }
+    }).then(function(dbEvent) {
+      res.json(dbEvent)
     });
   });
 
   // Create a new event
   app.post("/api/events", function(req, res) {
+    console.log(req.query.id)
     db.Event.create(req.body).then(function(dbEvent) {
       res.json(dbEvent);
     });

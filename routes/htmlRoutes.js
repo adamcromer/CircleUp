@@ -4,7 +4,7 @@ var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  // Load index page
+  var groupId;
   app.get("/", function(req, res) {
     if (req.user) {
       res.redirect("user");
@@ -35,10 +35,9 @@ module.exports = function(app) {
   // Load GROUP page
   app.get("/group/:id", isAuthenticated, function(req, res) {
     db.Group.findOne({ where: { id: req.params.id } }).then(function(dbGroup) {
-      // console.log(dbEvent)
       res.render("group", {
-        group: dbGroup
-      });
+        group: dbGroup,
+      })
     });
   });
 
